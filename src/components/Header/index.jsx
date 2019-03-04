@@ -22,7 +22,7 @@ class Bar extends Component {
                       <a className="dropdown-item" href="shop.html">Shop</a>
                       <a className="dropdown-item" href="product-single.html">Single Product</a>
                       <a className="dropdown-item" href="room.html">Cart</a>
-                      <a className="dropdown-item" href="checkout.html">Checkout</a>
+                      <a className="dropdown-item" href="checkout.html">Login</a>
                     </div>
                   </li>
                   <li className="nav-item active"><a href="contact.html" className="nav-link">Contact</a></li>

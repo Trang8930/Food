@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+import Bar from '../Header/index.jsx';
 class BlogSingle extends Component {
-    
+
     render() {
         return (
-        <React.Fragment>
+            <React.Fragment>
     <Bar/>
   {/* END nav */}
   <div className="slider-item" style={{ height: 100, width: 100, backgroundImage: `url("images/image_1.jpg")`}} data-stellar-background-ratio="0.5"/>
