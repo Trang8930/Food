@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class Footer extends Component{
   render(){
     return(
-            <footer className="ftco-footer ftco-section img">
+        <footer className="ftco-footer ftco-section img">
           <div className="overlay" />
           <div className="container">
             <div className="row mb-5">
@@ -72,7 +72,7 @@ class Footer extends Component{
             <div className="row">
               <div className="col-md-12 text-center">
                 <p>{/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                  Copyright © All rights reserved | This template is made with <i className="icon-heart" aria-hidden="true" /> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  Copyright © All rights reserved | Design <i className="icon-heart" aria-hidden="true" /> by <a href="https://colorlib.com" target="_blank">DUT1's TEAM</a>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}</p>
               </div>
             </div>

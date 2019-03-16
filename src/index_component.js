@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './components/Home/Home';
-import Menu from './components/Menu/Menu';
-import Service from './components/Service/Service';
-import Blog from './components/Blog/Blog';
-// import BlogSingle from './components/Blog/Blog-single/BlogSingle';
-import About from './components/About/About';
-import Shop from './components/Shop/Shop';
-import ProductSingle from './components/Shop/ProductSingle/ProductSingle';
-import Cart from './components/Shop/Cart/Cart';
-import Checkout from './components/Shop/Checkout/Checkout';
-import Contact from './components/Contact/Contact';
+import Home from './components/Home/index';
+import Menu from './components/Menu/index';
+import Service from './components/Service/index';
+import Blog from './components/Blog/index';
+import About from './components/About/index';
+import Shop from './components/Shop/index';
+import ProductSingle from './components/ProductSingle/index';
+import Cart from './components/Cart/index';
+import Checkout from './components/Checkout/index';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 
 class Com extends Component {
@@ -18,17 +18,17 @@ class Com extends Component {
 		return (
 	    <Router>
 	        <Switch>
-	            <Route path = '/Home' exact component = { Home } />
-	            <Route path = '/Menu' exact component = { Menu } />
-	            <Route path = '/Service' exact component = { Service } />
-	            <Route path = '/Blog' exact component = { Blog } />
-	            {/* <Route path = '/BlogSingle' exact component = { BlogSingle } /> */}
-	            <Route path = '/About' exact component = { About } />
-	            <Route path = '/Shop' exact component = { Shop } />
-	            <Route path = '/ProductSingle' exact component = { ProductSingle } />
-	            <Route path = '/Cart' exact component = { Cart } />
-	            <Route path = '/Checkout' exact component = { Checkout } />
-	            <Route path = '/Contact' exact component = { Contact } />
+	            <Route path = '/' exact component = { Home } />
+	            <Route path = '/Menu'  component = { Menu } />
+	            <Route path = '/Service'  component = { Service } />
+	            <Route path = '/Blog'  component = { Blog } />
+	            <Route path = '/About'  component = { About } />
+	            <Route path = '/Shop'  component = { Shop } />
+	            <Route path = '/ProductSingle'  component = { ProductSingle } />
+	            <Route path = '/Cart'  component = { Cart } />
+	            <Route path = '/Checkout'  component = { Checkout } />
+	            <Route path = '/Login'  component = { Login } />
+				<Route path = '/Register'  component = { Register } />
 	        </Switch>
     	</Router>
 		);
