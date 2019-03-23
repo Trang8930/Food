@@ -12,7 +12,6 @@ class ProductSingle extends Component {
               <Bar />
               <Slider title="Product Detail" breadcrumbstitle="Product Detail"></Slider>
               <Producdetail />
-              <Relatedproduct />
               <Footer />
           </React.Fragment>
 

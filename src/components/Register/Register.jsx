@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {
-  Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete,
+  Form, Input, DatePicker, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete,
 } from 'antd';
 
 const { Option } = Select;
@@ -94,85 +94,102 @@ class RegistrationForm extends React.Component {
     ));
 
     return (
-      <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-        Register
-        <Form.Item
-          label="E-mail"
-        >
-          {getFieldDecorator('email', {
-            rules: [{
-              type: 'email', message: 'The input is not valid E-mail!',
-            }, {
-              required: true, message: 'Please input your E-mail!',
-            }],
-          })(
-            <Input />
-          )}
-        </Form.Item>
-        <Form.Item
-          label="Password"
-        >
-          {getFieldDecorator('password', {
-            rules: [{
-              required: true, message: 'Please input your password!',
-            }, {
-              validator: this.validateToNextPassword,
-            }],
-          })(
-            <Input type="password" />
-          )}
-        </Form.Item>
-        <Form.Item
-          label="Confirm Password"
-        >
-          {getFieldDecorator('confirm', {
-            rules: [{
-              required: true, message: 'Please confirm your password!',
-            }, {
-              validator: this.compareToFirstPassword,
-            }],
-          })(
-            <Input type="password" onBlur={this.handleConfirmBlur} />
-          )}
-        </Form.Item>
-        <Form.Item
-          label="Phone Number"
-        >
-          {getFieldDecorator('phone', {
-            rules: [{ required: true, message: 'Please input your phone number!' }],
-          })(
-            <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
-          )}
-        </Form.Item>
-        <Form.Item
-          label="Address"
-        >
-          {getFieldDecorator('Address', {
-            rules: [{ required: true, message: 'Please input Address!' }],
-          })(
-            <AutoComplete
-              dataSource={AddressOptions}
-              onChange={this.handleAddressChange}
-              placeholder="Address"
-            >
+      <div className="bg-food">
+        <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+          Register
+          <Form.Item {...formItemLayout} label="User Name">
+            {getFieldDecorator('username', {
+              rules: [{
+                required: true,
+                message: 'Please input user name',
+              }],
+            })(
               <Input />
-            </AutoComplete>
-          )}
-        </Form.Item>
-        <Form.Item {...tailFormItemLayout}>
-          {getFieldDecorator('agreement', {
-            valuePropName: 'checked',
-          })(
-            <Checkbox>I have read the <a href="">agreement</a></Checkbox>
-          )}
-        </Form.Item>
-        <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">Register</Button>
-        </Form.Item>
-      </Form>
+            )}
+          </Form.Item>
+          <Form.Item {...formItemLayout} label="Full Name">
+            {getFieldDecorator('fullname', {
+              rules: [{
+                required: true,
+                message: 'Please input your full name',
+              }],
+            })(
+              <Input />
+            )}
+          </Form.Item>
+          <Form.Item
+            label="Birthday"
+            hasFeedback
+            validateStatus="birthday"
+          >
+            <DatePicker style={{ width: '100%' }} />
+          </Form.Item>
+          <Form.Item
+            label="E-mail"
+          >
+            {getFieldDecorator('email', {
+              rules: [{
+                type: 'email', message: 'The input is not valid E-mail!',
+              }, {
+                required: true, message: 'Please input your E-mail!',
+              }],
+            })(
+              <Input />
+            )}
+          </Form.Item>
+          <Form.Item
+            label="Password"
+          >
+            {getFieldDecorator('password', {
+              rules: [{
+                required: true, message: 'Please input your password!',
+              }, {
+                validator: this.validateToNextPassword,
+              }],
+            })(
+              <Input type="password" />
+            )}
+          </Form.Item>
+          
+          <Form.Item
+            label="Phone Number"
+          >
+            {getFieldDecorator('phone', {
+              rules: [{ required: true, message: 'Please input your phone number!' }],
+            })(
+              <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
+            )}
+          </Form.Item>
+          <Form.Item
+            label="Address"
+          >
+            {getFieldDecorator('Address', {
+              rules: [{ required: true, message: 'Please input Address!' }],
+            })(
+              <AutoComplete
+                dataSource={AddressOptions}
+                onChange={this.handleAddressChange}
+              >
+                <Input />
+              </AutoComplete>
+            )}
+          </Form.Item>
+          <Form.Item {...tailFormItemLayout}>
+            {getFieldDecorator('agreement', {
+              valuePropName: 'checked',
+            })(
+              <Checkbox>I have read the <a href="">agreement</a></Checkbox>
+            )}
+          </Form.Item>
+          <Form.Item {...tailFormItemLayout}>
+            <Button type="primary" htmlType="submit">Register</Button>
+          </Form.Item>
+        </Form>
+      </div>
     );
   }
 }
+
 
 const WrappedRegistrationForm = Form.create({ name: 'register' })(RegistrationForm);
 

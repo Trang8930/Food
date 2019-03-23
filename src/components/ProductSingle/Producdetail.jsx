@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Producdetail extends Component {
     render() {
@@ -46,7 +47,7 @@ class Producdetail extends Component {
                             </span>
                         </div>
                         </div>
-                        <p><a href="cart.html" className="btn btn-primary py-3 px-5">Add to Cart</a></p>
+                        <p><NavLink to="/Cart" className="btn btn-primary py-3 px-5">Add to Cart</NavLink></p>
                     </div>
                     </div>
                 </div>

@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import WrappedNormalLoginForm from '../Login/Login'
+
+
 class Bar extends Component {
     render() {
         return (
           <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div className="container">
-              <a className="navbar-brand" href="index.html">Food<small>Ordering</small></a>
+              <NavLink className="navbar-brand" to="/">Food<small>Ordering</small></NavLink>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="oi oi-menu" /> Menu
               </button>
               <div className="collapse navbar-collapse" id="ftco-nav">
                 <ul className="navbar-nav ml-auto">
+                  <li className="nav-item search">
+                    <input placeholder="Search Foods" class="search-input" type="text" value=""></input>
+                    <img src="./images/btn-search.png" alt="" className="img-search"/>
+                    {/* <Search/>
+                      placeholder="Search Foods"
+                      onSearch={value => console.log(value)}
+                      style={{ width: 200 
+                      }}
+                    /> */}
+                    <br />
+                  </li>
                   <li className="nav-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
-                  <li className="nav-item"><NavLink to="/Menu" className="nav-link">Menu</NavLink></li>
                   <li className="nav-item"><NavLink to="/Service" className="nav-link">Services</NavLink></li>
-                  <li className="nav-item"><NavLink to="/Blog" className="nav-link">Blog</NavLink></li>
                   <li className="nav-item"><NavLink to="/About" className="nav-link">About</NavLink></li>
                   <li className="nav-item dropdown">
                     <NavLink className="nav-link dropdown-toggle" to="/Shop" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</NavLink>
@@ -31,7 +41,6 @@ class Bar extends Component {
                 </ul>
               </div>
             </div>
-            <WrappedNormalLoginForm/>
           </nav>
         );
      }
